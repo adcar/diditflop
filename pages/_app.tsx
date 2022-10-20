@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           fetch(
             `https://api.themoviedb.org/3${path}${
               path.includes("?")
-                ? `&`
+                ? `&` + `api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
                 : `?` + `api_key=${process.env.NEXT_PUBLIC_TMDB_API_KEY}`
             }`
           ).then((res) => res.json()),
