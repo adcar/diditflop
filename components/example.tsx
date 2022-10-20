@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
 export default function Example() {
-  const { data, error } = useSWR("/discover/movie");
+  const { data, error } = useSWR("/discover/movie?cope=dilate");
 
   if (error) {
     return <h1>There was an error</h1>;

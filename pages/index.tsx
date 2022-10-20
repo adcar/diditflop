@@ -13,7 +13,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
+      <div className="container mx-auto mt-4">
+        {" "}
+        <h1 className="text-9xl font-extrabold">Did it Flop?</h1>
+      </div>
     </div>
   );
 };
