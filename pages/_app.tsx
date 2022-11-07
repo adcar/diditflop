@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <SWRConfig
       value={{
         refreshInterval: 3000,
-        fetcher: (path) =>
+        fetcher: (path: any) =>
           fetch(
             `https://api.themoviedb.org/3${path}${
               path.includes("?")
