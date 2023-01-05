@@ -1,6 +1,11 @@
+import React from "react";
 import "../styles/globals.css";
+import "react-toastify/dist/ReactToastify.min.css";
 import type { AppProps } from "next/app";
 import { SWRConfig } from "swr";
+import Layout from "../components/Layout";
+
+import { ToastContainer } from "react-toastify";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,7 +22,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           ).then((res) => res.json()),
       }}
     >
-      <Component {...pageProps} />
+      <ToastContainer position="top-right" theme="dark" />
+
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </SWRConfig>
   );
 }
