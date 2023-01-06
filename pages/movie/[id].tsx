@@ -46,7 +46,7 @@ export default function Movie() {
   const scoreAsPercentage = Math.round((vote_average / 10) * 100);
 
   return (
-    <Container className="mt-16 lg:mt-32">
+    <Container className="mt-16 lg:mt-32 animate-fade">
       <div className="flex flex-col lg:flex-row gap-16 items-center ">
         <Image
           placeholder="blur"
@@ -146,6 +146,10 @@ export default function Movie() {
             </div>
           </div>
         </div>
+      </section>
+
+      <section className={"mt-8"}>
+        <h2 className=" font-extrabold text-2xl">Recent flops</h2>
       </section>
     </Container>
   );

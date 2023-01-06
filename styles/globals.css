@@ -2,3 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+html,body {
+    color-scheme: dark;
+}
+
+.animate-fade {
+    animation-duration: 0.5s;
+    animation-name: fade;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.1
+    }
+
+    to {
+        opacity: 1
+    }
+}
