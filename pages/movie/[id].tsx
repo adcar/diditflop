@@ -72,18 +72,19 @@ export default function Movie() {
               </span>{" "}
               {isFlop ? "lost" : "made"}
             </h2>
-            <CountUp end={money} duration={2} separator=",">
-              {({ countUpRef }) => (
-                <div
-                  className={
-                    "block text-center text-4xl font-extrabold md:text-5xl lg:text-left lg:text-6xl xl:text-8xl " +
-                    (isFlop ? "text-red-500" : "text-green-500")
-                  }
-                >
-                  $<span ref={countUpRef}></span>
-                </div>
-              )}
-            </CountUp>
+
+            <div
+              className={
+                "block text-center text-4xl font-extrabold md:text-5xl lg:text-left lg:text-6xl xl:text-8xl " +
+                (isFlop ? "text-red-500" : "text-green-500")
+              }
+            >
+              $
+              <span>
+                <CountUp end={money} duration={2} separator="," />
+              </span>
+            </div>
+
             <span className="mx-auto mt-4 block w-96 text-center md:w-full lg:text-left">
               Or in other words:
               <span
