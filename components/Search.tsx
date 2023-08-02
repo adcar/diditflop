@@ -56,6 +56,7 @@ export default function Search() {
           layout
           transition={{ duration: 0.5, type: "tween" }}
           style={{
+            marginLeft: isHome ? 0 : 20,
             width: isHome ? 500 : 600,
             maxWidth: "100%",
             marginTop: isHome ? 16 : 0,
