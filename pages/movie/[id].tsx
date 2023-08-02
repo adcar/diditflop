@@ -39,14 +39,14 @@ export default function Movie() {
   if (!data) {
     return <></>;
   }
-  console.log("data", data);
+ 
   const { title, poster_path, revenue, budget, vote_average } = data;
   const isFlop = revenue - budget < 0;
   const money = Math.abs(revenue - budget);
   const scoreAsPercentage = Math.round((vote_average / 10) * 100);
 
   return (
-    <Container className="mt-16 lg:mt-32 animate-fade">
+    <Container className="mt-16 animate-fade">
       <div className="flex flex-col lg:flex-row gap-16 items-center ">
         <Image
           placeholder="blur"
@@ -102,7 +102,7 @@ export default function Movie() {
       </div>
 
       <section className={"flex flex-col lg:items-start items-center"}>
-        <h2 className="lg:mt-32 mt-16 font-extrabold text-2xl">
+        <h2 className="mt-16 font-extrabold text-2xl">
           Some more info...
         </h2>
         <div className="stats stats-vertical sm:stats-horizontal mt-4">
@@ -148,9 +148,10 @@ export default function Movie() {
         </div>
       </section>
 
-      <section className={"mt-8"}>
-        <h2 className=" font-extrabold text-2xl">Recent flops</h2>
-      </section>
+      {/*TODO: Recent Flops here (side by side with Some More Info on larger screens?)*/}
+      {/*<section className={"mt-8"}>*/}
+      {/*  <h2 className=" font-extrabold text-2xl">Recent flops</h2>*/}
+      {/*</section>*/}
     </Container>
   );
 }

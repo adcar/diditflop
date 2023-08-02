@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import React, { SyntheticEvent } from "react";
 import { toast } from "react-toastify";
 import Link from "next/link";
+import Autocomplete from "./Autocomplete";
 
 export default function Search() {
   const router = useRouter();
@@ -32,8 +33,8 @@ export default function Search() {
     <LayoutGroup>
       <div
         className={
-          "flex h-12 w-full items-center gap-4 container mx-auto px-4 " +
-          (isHome ? "flex-col h-screen items-center justify-center" : "mt-4")
+          "container mx-auto flex h-12 w-full items-center gap-4 px-4 " +
+          (isHome ? "h-[70vh] flex-col items-center justify-center" : "mt-4")
         }
       >
         <Link href="/">
@@ -42,8 +43,8 @@ export default function Search() {
               layout
               transition={{ duration: 0.5, type: "tween" }}
               className={
-                "font-extrabold whitespace-nowrap " +
-                (isHome ? "text-5xl sm:text-6xl" : "sm:text-2xl text-lg")
+                "whitespace-nowrap font-extrabold " +
+                (isHome ? "text-5xl sm:text-6xl" : "text-lg sm:text-2xl")
               }
             >
               Did it <span className="text-primary">Flop</span>?
@@ -55,17 +56,19 @@ export default function Search() {
           layout
           transition={{ duration: 0.5, type: "tween" }}
           style={{
-            width: isHome ? 500 : 260,
+            width: isHome ? 500 : 600,
             maxWidth: "100%",
             marginTop: isHome ? 16 : 0,
+            position: "relative",
           }}
         >
-          <input
-            id="movie"
-            type="text"
-            placeholder="Start searching for a movie..."
-            className={"w-full  input input-bordered text-primary"}
-          />
+          <Autocomplete />
+          {/*<input*/}
+          {/*  id="movie"*/}
+          {/*  type="text"*/}
+          {/*  placeholder="Start searching for a movie..."*/}
+          {/*  className={"w-full  input input-bordered text-primary"}*/}
+          {/*/>*/}
         </motion.form>
       </div>
     </LayoutGroup>

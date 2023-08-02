@@ -5,6 +5,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <>
       <Search />
+
       <main>{children}</main>
     </>
   );
